@@ -8,7 +8,6 @@
   
 - [PADA-WAN Overview ](#padawan-overview)
 - [PADA-WAN Components](#padawan-components)
-  - [Download IDs (1-1)](#Download IDs (1-1))
 
 
 # System requirements
