@@ -46,13 +46,12 @@ The first script in the PADA-WAN pipeline queries the PanelApp / PanelApp Austra
 
 This script requires a parameters file, which contains information about the version of PanelApp to query, as well as the the input / output directories. The parameter file also contains the token files for both PanelApp Australia and Genomics England instance of PanelApp. 
 
-An example of the parameter file can be found in _____
+An example of the parameter file can be found in /PADA-WAN/1-1/
 
-To run this script use 
+To run this script use following command:
+  python3 1-1_Downlad-IDs.py --file-path parameters_file.txt
 
-python3 1-1_Downlad-IDs.py --file-path parameters_file.txt
-
-This will produce 
+If run correctly it will produce a .tsv file containing information for each panel in the PanelApp of your choice.
 
 ## 1.2 - Panel Downloader
 
