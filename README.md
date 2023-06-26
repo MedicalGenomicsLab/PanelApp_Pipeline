@@ -68,15 +68,29 @@ This script also requires a parameters file. This file contains the location of 
 Two example of the parameter files can be found in /PADA-WAN/1-2/
 
 This script is run using the following command:
-  python3 1-2_PanelDownloadee.py --file-path parameters_file.txt
+  python3 1-2_PanelDownloader.py --file-path parameters_file.txt
 
 ## 1.3 - Panel Summariser
 
-The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month.
+The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month. It produces a summary file for each panel downloaded by script 1.2, that only shows 1 version of the panel for each month.
+
+This script also requires a parameters file. This file contains the location the files produced by 1.2.
+
+An example of the parameter file can be found in /PADA-WAN/1-3/
+
+This script is run using the following command:
+  python3 1-3_PanelSummariser.py --file-path parameters_file.txt
 
 ## 1.4 - Panel Factoriser 
 
-The matrices script, opens the monthly summary file for each panel and combines this information into a matrix for a specific variable (no. of releases, no. of genes, no. of diagnostic genes, etc). For example, this script produces an output file that shows number of releases there was been for each panel, over the space of each month. 
+The matrices script, opens the monthly summary file for each panel and combines this information into a matrix for a specific variable (no. of releases, no. of genes, no. of diagnostic genes, etc). For example, this script produces an output file that shows number of releases there was been for each panel, over the space of each month.
+
+This script also requires a parameters file. 
+
+An example of the parameter file can be found in /PADA-WAN/1-3/
+
+This script is run using the following command:
+  python3 1-4_PanelFactoriser.py --file-path parameters_file.txt
 
 ## 2.1 - Characterise Gene Changes
 
