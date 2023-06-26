@@ -86,7 +86,7 @@ The matrices script, opens the monthly summary file for each panel and combines 
 
 This script also requires a parameters file. 
 
-An example of the parameter file can be found in /PADA-WAN/1-3/
+An example of the parameter file can be found in /PADA-WAN/1-4/
 
 This script is run using the following command:
   python3 1-4_PanelFactoriser.py --file-path parameters_file.txt
@@ -95,8 +95,21 @@ This script is run using the following command:
 
 The other series of scripts, describes the process of determining the genes that have been added to, and removed from a panel, as well as the genes that have been upgraded to and downgraded from diagnostic status. 
 
+This script also requires a parameters file. 
+
+An example of the parameter file can be found in /PADA-WAN/2-1/
+
+This script is run using the following command:
+  python3 2-1_CharacteriseGeneChanges.py --file-path parameters_file.txt
+
 ## 2.2 - Determine Cumulative Gene Changes
 
+This script also requires a parameters file. 
+
+An example of the parameter file can be found in /PADA-WAN/2-2/
+
+This script is run using the following command:
+  python3 2-2_CumulativeGeneChanges.py --file-path parameters_file.txt
 _____
 
 ## 2.3 - Visualisations
