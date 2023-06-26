@@ -55,9 +55,20 @@ If run correctly it will produce a .tsv file containing information for each pan
 
 ## 1.2 - Panel Downloader
 
-This script takes each of the panels in the listed in the output file from the script 1.1, and uses this information to download begin to download individual panels from the PanelApp / PanelApp Australia API. To ensure that that every possible version of a panel was downloaded, the second script would systematically attempt to download every version from 0.0 until the current release. As PanelApp separates releases into ‘major’ and ‘minor’ versions (1.x vs. x.101), and, there is no way of knowing how many minor versions have been released in each prior major version, the script begins by attempting to download version 0.0 of a panel, and then moves on to each consecutive minor panel release.  If a specific minor version of this panel was not available, the script skips it and attempts to download the next minor release of the panel. If the script was unable to download ten consecutive minor versions of panel, the script assumes that there are no more minor releases associated with this major version, and moves to next major release of the panel. If the script failed to download the version of the panel listed in the ID file, a warning file is produced. The information from PanelApp is originally stored in the JSON format, but to make this information more accessible, it is stored here as a tab delimited text file. In addition to processing every available version of a panel, this script also produced a summary file, that contains the number of genes as well as the total number of genes in a specific version of panel.
+This script takes each of the panels in the listed in the output file from the Download IDs script (1.1,) and uses this information to download begin to download individual panels from the PanelApp / PanelApp Australia API. 
 
-This script is run 
+There are some things to note about this approach:
+
+1. As PanelApp uses both minor and major releases, and there is a large in the number of minor releases before a major release we developed a system to accoutn for this variability. To ensure that that every possible version of a panel was downloaded, this script systematically attempt to download every version from 0.0 until the current release.If a specific minor version of this panel was not available, the script skips it and attempts to download the next minor release of the panel. If the script was unable to download ten consecutive minor versions of panel, the script assumes that there are no more minor releases associated with this major version, and moves to next major release of the panel. If the script failed to download the version of the panel listed in the ID file, a warning file is produced.
+2. In addition to processing every available version of a panel, this script also produces a summary file, that contains the number of genes as well as the total number of genes in a specific version of panel.
+3. As the information from PanelApp is stored in the JSON format, it can be challenging for people to access this information.To make this information more accessible, it is stored here as a tab delimited text file. 
+
+This script also requires a parameters file. This file contains the location of the ID file produced by 1.1 as well as the tokens for both PanelApp Australia and the Genomics England instance of the resource.
+
+Two example of the parameter files can be found in /PADA-WAN/1-2/
+
+This script is run using the following command:
+  python3 1-2_PanelDownloadee.py --file-path parameters_file.txt
 
 ## 1.3 - Panel Summariser
 
